@@ -83,8 +83,20 @@ img {
     text-align: center;
 }
 
-.header {
+
+/*===================================================
+################# HEADER CABECERA ##################
+**===================================================*/
+
+.webp .header {
+    background-image: url(../img/banner.webp);
+}
+
+.no-webp .header {
     background-image: url(../img/banner.jpg);
+}
+
+.header {
     height: 60rem;
     background-size: cover;
     background-repeat: no-repeat;
@@ -178,6 +190,11 @@ img {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border: none;
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -237,3 +254,149 @@ img {
     padding-bottom: 3rem;
     margin-top: 4rem;
 }
+
+
+/*===================================================
+################## SOBRE NOSOTROS ###################
+**===================================================*/
+
+@media screen and (min-width: 768px) {
+    /*
+    //Este codigo flex con gap no lo soportan todos los navegadores
+    .sobre-nosotros {
+        display: flex;
+            gap: 2rem;
+    }
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto {
+        flex-basis: 50%;
+    }
+    */
+    /*
+    //Este codigo flex con gap lo soportan la mayoria bde los navegadores 
+    .sobre-nosotros {
+        display: flex;
+        justify-content: space-between;
+    }
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto {
+        flex-basis: calc(50% - 1rem);
+    }
+    */
+    /* //Este codigo grid da el mismo resultado del codigo anterior*/
+    .sobre-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+
+/*===================================================
+################## PAGINA CURSOS ####################
+**===================================================*/
+
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+}
+
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+
+.curso:last-of-type {
+    border: none;
+}
+
+.curso__label {
+    font-family: var(--fuenteHeadin);
+    font-weight: bold;
+}
+
+.curso__info {
+    font-weight: normal;
+}
+
+.curso__label,
+.curso__info {
+    font-size: 2rem;
+}
+
+
+/*===================================================
+################## PAGINA CONTACTO ####################
+**===================================================*/
+
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*===================================================
+######### PAGINA CONTACTO FORMULARIO ################
+**===================================================*/
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+    border-radius: 2rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.campo__field {
+    flex: 1;
+    border: 1px solid var(--gris);
+    border-radius: 0.3rem;
+}
+
+.campo__field--textarea {
+    height: 20rem;
+}
+
+
+/*=============================================
+PANTALLA DE ESCRITORIO GRANDE - LARGE (lg) - revisamos en portatil o pc 
+=============================================*/
+
+@media(min-width:1200px) {}
+
+
+/*=============================================
+PANTALLA DE ESCRITORIO MEDIANO - MEDIUM (md) - revisamos en tablet horizontal 1024px
+=============================================*/
+
+@media(max-width:1199px) and (min-width:992px) {}
+
+
+/*=============================================
+PANTALLA DE TABLET - SMALL (sm) - revisamos en tablet vertical 768px
+=============================================*/
+
+@media(max-width:991px) and (min-width:768px) {}
+
+
+/*=============================================
+PANTALLA DE PHONES - EXTRA SMALL (xs) - revisamos en movil horizontal 480px o vertical 320px
+=============================================*/
+
+@media(max-width:767px) {}
