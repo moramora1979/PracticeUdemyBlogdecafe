@@ -373,6 +373,20 @@ img {
     height: 20rem;
 }
 
+@media(max-width:767px) {
+    .campo {
+        flex-wrap: wrap;
+        justify-content: left;
+        margin-bottom: 0.1rem;
+    }
+    .campo__label {
+        text-align: left;
+    }
+    .campo__field {
+        margin-bottom: 1rem;
+    }
+}
+
 
 /*=============================================
 PANTALLA DE ESCRITORIO GRANDE - LARGE (lg) - revisamos en portatil o pc 
